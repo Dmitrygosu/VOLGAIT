@@ -28,7 +28,7 @@ go build -o grz-recognition.exe main.go
 .\grz-recognition.exe -video видео-участникам.mp4 -output results.csv
 ```
 
-## Проверка
+## Проверка:
 
 ```bash
 python validate_results.py results.csv
