@@ -19,3 +19,9 @@ venv/
 *.log
 
 bin/
+
+# Organizers' materials (video, ground truth) are not redistributed
+*.mp4
+*.avi
+*.mov
+test_ground_truth.csv

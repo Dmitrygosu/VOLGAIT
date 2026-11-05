@@ -165,8 +165,17 @@ def format_time(seconds):
     return f"{minutes:02d}:{secs:02d}.{centisecs:02d}"
 
 if __name__ == "__main__":
-    ground_truth_file = "test_ground_truth.csv"
+    import os
+
     results_file = "results.csv"
+    ground_truth_file = "test_ground_truth.csv"
+    if len(sys.argv) > 2:
+        ground_truth_file = sys.argv[2]
+    if not os.path.exists(ground_truth_file):
+        print(f"Нет файла эталонной разметки {ground_truth_file}.")
+        print("Разметка организаторов в репозиторий не входит: передайте путь к своей вторым аргументом:")
+        print("  python validate_results.py results.csv path/to/ground_truth.csv")
+        sys.exit(2)
     
     if len(sys.argv) > 1:
         results_file = sys.argv[1]
